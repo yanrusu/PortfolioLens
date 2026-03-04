@@ -23,10 +23,6 @@ SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
---
--- Name: portfolio; Type: TABLE; Schema: public; Owner: iansu
---
-
 CREATE TABLE public.portfolio (
     asset character varying(20) NOT NULL,
     asset_type character varying(20) NOT NULL,

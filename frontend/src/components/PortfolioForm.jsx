@@ -34,7 +34,7 @@ export default function PortfolioForm({ onSubmit }) {
         </div>
 
         <div className="field-group">
-          <label>資產名稱</label>
+          <label>資產代號</label>
           <input
             type="text"
             value={asset}
@@ -69,7 +69,7 @@ export default function PortfolioForm({ onSubmit }) {
         </div>
 
         <div className="field-group">
-          <label>價格（每單位）</label>
+          <label>價格（每單位 USD）</label>
           <input
             type="number"
             value={price}

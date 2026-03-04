@@ -14,7 +14,6 @@ app.put("/price", async (req, res) => {
     const dbResult = await pool.query("SELECT asset, asset_type, real_price FROM portfolio");
     await pool.query("BEGIN");
     for (const row of dbResult.rows){
-      console.log(row.asset,row.asset_type);
       const price = await find_real_price(row.asset, row.asset_type, row.real_price);
       await pool.query(
         "UPDATE portfolio SET real_price = $1 WHERE asset = $2",
@@ -41,8 +40,6 @@ app.get("/portfolio", async (req, res) => {
 
 app.post("/portfolio", async (req, res) => {
   const transactions = req.body.transactions
-  console.log(Array.isArray(transactions)) //test
-  console.log(transactions)
 
   try{
     const dbResult = await pool.query("SELECT * FROM portfolio");
@@ -58,7 +55,6 @@ app.post("/portfolio", async (req, res) => {
     }
 
     result = await processTransaction(transactions,result);
-    console.log(result);
     for (const asset in result) {
       const r = result[asset];
       await pool.query(
