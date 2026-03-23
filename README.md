@@ -1,5 +1,6 @@
 # PortfolioLens
 Investment Tracker
+
 PortfolioLens 是一個投資組合追蹤工具，支援股票、加密貨幣與現金部位管理。
 系統會記錄交易、計算持有成本與均價，並可透過 Yahoo Finance 更新市場價格，讓你快速掌握投組分布與損益狀況。
 
@@ -86,7 +87,7 @@ Request body：
 
 | 欄位 | 型別 | 說明 |
 |---|---|---|
-| asset | varchar(20) | 資產代號（主鍵） |
+| asset | varchar(20) | 說明 |
 | asset_type | varchar(20) | 資產類別：STOCK/CRYPTO/CASH |
 | quantity | numeric(20,8) | 持有數量 |
 | avg_cost | numeric(12,4) | 平均成本 |
